@@ -1,0 +1,36 @@
+{
+  "name": "path-data",
+  "version": "0.0.1",
+  "description": "SVG path data parser",
+  "keywords": [
+    "svg",
+    "path"
+  ],
+  "license": "ISC",
+  "author": {
+    "name": "Mike Bostock",
+    "url": "https://bost.ocks.org/mike"
+  },
+  "homepage": "https://github.com/mbostock/path-data",
+  "repository": "https://github.com/mbostock/path-data",
+  "files": [
+    "dist/**/*.js",
+    "src/**/*.js"
+  ],
+  "main": "dist/path-data.js",
+  "unpkg": "dist/path-data.min.js",
+  "module": "src/index.js",
+  "devDependencies": {
+    "esm": "3",
+    "rollup": "1",
+    "rollup-plugin-node-resolve": "4",
+    "rollup-plugin-terser": "4",
+    "tape": "4",
+    "tape-await": "0.1"
+  },
+  "scripts": {
+    "prepublishOnly": "rm -rf dist && rollup -c",
+    "postpublish": "git push && git push --tags",
+    "test": "tape -r esm 'test/**/*-test.js'"
+  }
+}
